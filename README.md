@@ -38,3 +38,18 @@ request Validator Package
 3.  Delete
 
 4.  Return the same course
+
+// Middleware
+(express.urlencoded()) key=value&key=value x-www-form-urlencoded[postman] --> to parse url encoded form
+express.static --> to serve static files
+note - public folder are served at the root of our application eg. localhost:3000/readme.txt
+morgan --> To log http request
+
+process.env.NODE_ENV --> returns the environment
+app.get('env') --> get environment variable
+
+set NODE_ENV=production
+
+// CONFIGURATION
+npm i rc
+npm config -- Better alternative
