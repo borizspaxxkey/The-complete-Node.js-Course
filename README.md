@@ -18,3 +18,23 @@ if(err) handle
 
 //JOI
 request Validator Package
+
+// PUT LOGIC
+
+1.  Look up the course
+2.  if not existing, return 404- Not Found
+
+3.  Validate
+4.  if invalid, return 400- Bad Request
+
+5.  Update course
+6.  Return the updated course
+
+// DELETE LOGIC
+
+1.  Look up the course
+2.  Not Existing, return 404
+
+3.  Delete
+
+4.  Return the same course
