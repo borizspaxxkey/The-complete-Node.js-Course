@@ -52,4 +52,7 @@ set NODE_ENV=production
 
 // CONFIGURATION
 npm i rc
-npm config -- Better alternative
+npm config -- Better alternative ---> for using configuration in our node server
+
+// To set password to environment variable
+set password=123
