@@ -72,3 +72,17 @@ DEBUG=app:db nodemon server.js
 
 app.set('view engine', 'pug');
 app.set('views', '') //optional, sets the path to where we store the template default is ./views
+
+//
+create new file eg courses.js
+const express = require('express')
+const router = express.Router();
+router.get('/api/courses', (req,res)=>{
+res.send('hello')
+});
+module.exports = router;
+
+server.js
+import routes file
+const courses = require('/routes/courses)
+app.use('/', courses);
