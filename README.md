@@ -56,3 +56,19 @@ npm config -- Better alternative ---> for using configuration in our node server
 
 // To set password to environment variable
 set password=123
+
+// DEBUG [alternative to console.log]
+npm i debug
+const startupDebugger = require('debug')('app:startup');
+startupDebugger('Morgan Enabled...')
+---> set DEBUG=app:startupDebugger, app:dbDebugger or app:\* //that means we are only going to see startupDebugger log messages on the console
+
+DEBUG=app:db nodemon server.js
+
+// TEMPLATING ENGINE
+1.pug [formerly called jade] npm i pug
+2.mustache
+3.EJS
+
+app.set('view engine', 'pug');
+app.set('views', '') //optional, sets the path to where we store the template default is ./views
