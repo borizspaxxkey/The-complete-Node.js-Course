@@ -206,3 +206,6 @@ author: 'Mosh',
 
 update (returns the result of the operation) ---> $set
 findByIdAndUpdate(returns the document that was updated)
+await Course.deleteOne({ \_id: id }); (returns the result of the operation)
+await Course.deletemany({ \_id: id }); (returns the result of the operation)
+findByIdAndDelete(returns the document that was deleted)

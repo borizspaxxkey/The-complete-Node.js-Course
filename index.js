@@ -39,15 +39,10 @@ async function getCourses() {
   console.log(courses);
 }
 
-async function updateCourse(id) {
-  const course = await Course.findByIdAndUpdate(id, {
-    $set: {
-      author: 'Jason',
-      isPublished: false
-    }
-  }, { new: true });
-
+async function removeCourse(id) {
+  // const result = await Course.deleteOne({ _id: id });
+  const course = await Course.findByIdAndRemove(id);
   console.log(course);
 }
 
-updateCourse('5ec4f8f398d665808cf1e229');
+removeCourse('5ec4f8f398d665808cf1e229');
