@@ -194,3 +194,15 @@ course.save();
 }
 
 2.  Update First ---> Update directly ->(optionally) get the updated document
+
+// UPDATE OPERATORS
+$inc
+$currentDate
+$max
+
+await Course.update({ \_id: id }, {
+$set: {
+author: 'Mosh',
+
+update (returns the result of the operation) ---> $set
+findByIdAndUpdate(returns the document that was updated)
