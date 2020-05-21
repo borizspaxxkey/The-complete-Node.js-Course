@@ -135,7 +135,7 @@ await course.save();
 // lte (less than or equal to )
 // in
 // nin (not in)
-// ,[comma](and) ---> for values
+// ,[comma](and) ---> for properties
 // $in:[0,3,5](or) 0 or 3 or 5 ---> for values
 // seach a preperty ---> create a new object and use the operator as key {$gte:10}
 

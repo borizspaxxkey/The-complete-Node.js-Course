@@ -39,4 +39,7 @@ async function getCourses() {
   console.log(courses);
 }
 
+async function updateCourse(id) {
+
+}
 getCourses();
