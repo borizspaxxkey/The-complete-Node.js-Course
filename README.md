@@ -174,3 +174,23 @@ const pageSize = 10;
 limit(pagesize)
 
 mongoimport ---> to import data into our database
+
+// UPDATING A DOCUMENT
+
+1.  Query First ---> findById() -> modify its properties ->save()
+
+    async function updateCourse(id) {
+    const course = await Course.findById(id);
+    if (!course) return;
+
+course.isPublished = true;
+course.author = 'Another Author';
+
+course.set({
+isPublished: true,
+author: 'Another Author'
+});
+course.save();
+}
+
+2.  Update First ---> Update directly ->(optionally) get the updated document
