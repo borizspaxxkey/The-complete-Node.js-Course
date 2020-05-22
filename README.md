@@ -209,3 +209,31 @@ findByIdAndUpdate(returns the document that was updated)
 await Course.deleteOne({ \_id: id }); (returns the result of the operation)
 await Course.deletemany({ \_id: id }); (returns the result of the operation)
 findByIdAndDelete(returns the document that was deleted)
+
+course.validate(); returns Promise of void
+so we pass a callback to check for isValid
+course.validate((err)=>{
+if(err){
+
+}
+});
+
+Joi validation in our restful apis to make sure data our client is sending us is valid,
+mongoose validation to make sure data sent to the dB is in the right shape
+
+Note
+()=>{} arrow functions dont have this in their own context // means anonymous function have global scope. this refers to higher level object
+
+Note
+validation only existss in the context on mongoose. mongodB doensnt care
+
+// enum validator
+enum:['yellow','red','blue']
+
+// Custom validator
+validate: {
+validator: function (value) {
+return value && value.length > 0;
+},
+message: 'A course should have at least one tag.'
+}
