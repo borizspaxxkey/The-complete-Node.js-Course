@@ -230,10 +230,31 @@ validation only existss in the context on mongoose. mongodB doensnt care
 // enum validator
 enum:['yellow','red','blue']
 
-// Custom validator
+// Custom syncronous validator
 validate: {
 validator: function (value) {
 return value && value.length > 0;
 },
 message: 'A course should have at least one tag.'
 }
+
+// Custom Asyncronous validator
+validate: {
+isAsync:true
+validator: function (value) {
+return value && value.length > 0;
+},
+message: 'A course should have at least one tag.'
+}
+
+// WAYS OF DEALING WITH ASYNC CODE
+
+1.  CallBack
+2.  Promises
+3.  Async/Await
+
+// Note
+
+schema --> new Model --> document
+
+Single Responsibility Principle
