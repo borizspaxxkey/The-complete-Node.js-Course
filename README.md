@@ -258,3 +258,77 @@ message: 'A course should have at least one tag.'
 schema --> new Model --> document
 
 Single Responsibility Principle
+
+// Modeling Relationship
+
+// Trade off between query performance and consistency
+
+1.  Using References [normalization] ---> CONSISTENCY
+
+let author ={
+name:'Mosh'  
+}
+
+let course = {
+author:'id'
+}
+
+Sample
+const Course = mongoose.model('Course', new mongoose.Schema({
+name: String,
+author: {
+type: mongoose.Schema.Types.ObjectId,
+ref: 'Author'
+}
+}));
+
+2.  Using Embedded Document [denormalization] --->PERFORMANCE
+    let course = {
+    author:{
+    name:'Mosh'
+    }
+
+    }
+
+    const Course = mongoose.model('Course', new mongoose.Schema({
+    name: String,
+    author: authorSchema
+    }));
+
+3.  Using Hybrid
+
+let author = {
+name: 'Mosh'
+// 50 other properties
+}
+
+let coourse = {
+author: {
+id:'ref',
+name: 'Mosh
+}
+}
+
+// NOTE
+Only properties defined in your model will be persisted in your DB
+
+.populate('author')
+
+// Embedded document cannot be saved on their own, only in the context of their parent
+
+// update embedded document
+const course = await Course.update({ \_id: courseId }, {
+$set: {
+'author.name'
+}
+});
+
+// update embedded document alternative
+const course = await Course.findById(courseId);
+course.author.name = 'Mosh Hamedani';
+course.save();
+
+Note
+save command is the only operation that creates an \_id
+
+$unset operator to remove a property in a document [kinda like undo]
