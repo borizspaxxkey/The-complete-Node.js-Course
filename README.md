@@ -338,3 +338,25 @@ const author = course.authors.id(authorId); // To query subdocument
 // TWO PHASE COMMIT ---> TRANSACTION
 
 npm i fawn // npm package that mkaes transaction possible in mongodb using 2 phase commit
+
+// Object ID
+24 charaters long- every 2 characters represent a byte
+// 12 bytes
+// first 4 bytes: timestamp
+// next 3 characters :machine identifier
+// next 2 bytes: process identifier
+// next 3 bytes: counter
+
+Driver[generates the Id of the document] --> MongoDB
+
+console.log(id.getTimestamp()); // to get the timestamp of generated document
+
+npm i joi-objectid // validate object id
+Joi.objectId = require('joi-objectid')(Joi);
+
+// Authentication is the process of identifying if the user is who they claim they are
+// Authorization is determining if the user has the right permission to perform the
+email:{
+type:String,
+unique:true // this ensures we do not store two documents with the same email in mongoDb
+}
