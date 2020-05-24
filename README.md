@@ -332,3 +332,9 @@ Note
 save command is the only operation that creates an \_id
 
 $unset operator to remove a property in a document [kinda like undo]
+
+const author = course.authors.id(authorId); // To query subdocument
+
+// TWO PHASE COMMIT ---> TRANSACTION
+
+npm i fawn // npm package that mkaes transaction possible in mongodb using 2 phase commit
