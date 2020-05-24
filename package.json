@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "config": "^3.3.1",
     "debug": "^4.1.1",
     "express": "^4.17.1",
@@ -16,6 +17,8 @@
     "helmet": "^3.22.0",
     "joi": "^14.3.1",
     "joi-objectid": "^2.0.0",
+    "joi-password-complexity": "^4.1.0",
+    "lodash": "^4.17.4",
     "mongoose": "^5.0.1",
     "morgan": "^1.10.0",
     "pug": "^2.0.4"

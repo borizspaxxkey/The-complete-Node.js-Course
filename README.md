@@ -360,3 +360,36 @@ email:{
 type:String,
 unique:true // this ensures we do not store two documents with the same email in mongoDb
 }
+
+// 400: bad request
+// 404: not found
+// 500: internal server error
+// 401: Unauthorized
+// 200: Ok
+// 201:
+
+// LODASH
+utility library for working with objects
+
+// Joi password complexity : npm package to enforce password complexity
+npm install joi-password-complexity
+
+//Can use "joi-password-complexity" to create a template for the password
+/_
+const Joi = require('joi');
+const PasswordComplexity = require('joi-password-complexity');
+
+ const complexityOptions = {
+min: 10,
+max: 30,
+lowerCase: 1,
+upperCase: 1,
+numeric: 1,
+symbol: 1,
+requirementCount: 2,
+}
+
+ Joi.validate('aPassword123!', new PasswordComplexity(complexityOptions), (err, value) => {
+//...
+})
+_/
