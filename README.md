@@ -406,3 +406,21 @@ const jwt = require('jsonwebtoken');
 jwt.sign({
 \_id:\_user.\_id
 })
+
+iat: time token was generated
+
+process.exit(0) //0 means success, any other number means failure eg.1
+
+// SETTING ENVIRONMENT VARIABLE
+
+1.  npm i config
+2.  create default.json
+3.  set config object in default.json
+    eg {
+    "jwtPrivateKey": ""
+    }
+4.  set custom-environment-variables.json
+    {
+    "jwtPrivateKey": "vidly_jwtPrivateKey"
+    }
+5.  set vidly_jwtPrivateKey=mySecureKey
