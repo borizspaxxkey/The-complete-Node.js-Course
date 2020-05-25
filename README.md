@@ -375,11 +375,11 @@ utility library for working with objects
 npm install joi-password-complexity
 
 //Can use "joi-password-complexity" to create a template for the password
-/_
+/\_
 const Joi = require('joi');
 const PasswordComplexity = require('joi-password-complexity');
 
- const complexityOptions = {
+const complexityOptions = {
 min: 10,
 max: 30,
 lowerCase: 1,
@@ -389,7 +389,20 @@ symbol: 1,
 requirementCount: 2,
 }
 
- Joi.validate('aPassword123!', new PasswordComplexity(complexityOptions), (err, value) => {
+Joi.validate('aPassword123!', new PasswordComplexity(complexityOptions), (err, value) => {
 //...
 })
-_/
+\_/
+
+bcrypt.compare(req.body.password, user.password) // To compare passwords
+
+npm i jspnwebtoken // for creating json web token
+
+1.  header
+2.  payload
+3.  digital signature
+
+const jwt = require('jsonwebtoken');
+jwt.sign({
+\_id:\_user.\_id
+})
