@@ -364,7 +364,8 @@ unique:true // this ensures we do not store two documents with the same email in
 // 400: bad request
 // 404: not found
 // 500: internal server error
-// 401: Unauthorized
+// 401: Unauthorized ---> user tries to access a protected resource but dont supply a valid json web token, but we give them a chance to retry with a valid jwt
+// 403: forbidden ---> if after tring with valid json web token and still cant access the given resource then we send them forbidden [role based access]
 // 200: Ok
 // 201:
 
@@ -424,3 +425,18 @@ process.exit(0) //0 means success, any other number means failure eg.1
     "jwtPrivateKey": "vidly_jwtPrivateKey"
     }
 5.  set vidly_jwtPrivateKey=mySecureKey
+
+//set headers with res.headers [also for arbitrary headers use x-] eg x-auth-token
+
+// Information Expert Principle
+
+// AUTH MIDDLEWARE  
+const auth = require('../middleware/auth');
+
+router.post('/', auth, async (req, res) // 2nd param is middleware
+
+DONT save tokens in a database : it is bad practice.
+
+isAdmin: Boolean
+role:[],
+operations:[]
