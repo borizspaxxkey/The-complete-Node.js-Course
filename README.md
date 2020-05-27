@@ -449,3 +449,19 @@ app.use(function(err, req, res, next){
 })
 
 index.js ---> orchestration, high level arrangment, details should be encapsulated in different modules
+
+// npm i express-async-errors [monkey patch our async code]
+require('express-async-errors'); // no need to store result in a constant
+alternativelty use async middleware function
+
+npm i winston // logging library for express
+winston logger has a transport, which is essentially a storage device for our logs [console, file, http]
+log level --> importance of message we are going to log;
+// error
+// warn
+// info
+// verbose
+// debug
+// silly
+
+npm i winston-mongodb // for logging to mongodb

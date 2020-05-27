@@ -8,3 +8,4 @@ module.exports = function (handler) {
     }
   };
 }
+//Alternate way to handle errors
