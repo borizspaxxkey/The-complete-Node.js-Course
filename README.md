@@ -440,3 +440,12 @@ DONT save tokens in a database : it is bad practice.
 isAdmin: Boolean
 role:[],
 operations:[]
+
+mongod ---> to start the mongo daemon
+
+express error middleware for logging exceptions app wide // registered after all the middleware functions
+app.use(function(err, req, res, next){
+
+})
+
+index.js ---> orchestration, high level arrangment, details should be encapsulated in different modules
