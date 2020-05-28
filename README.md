@@ -464,4 +464,6 @@ log level --> importance of message we are going to log;
 // debug
 // silly
 
+if you set log level to info for example only error messages upto info will be shown, verbose,debug and silly will be omitted
+
 npm i winston-mongodb // for logging to mongodb
