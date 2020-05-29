@@ -467,3 +467,35 @@ log level --> importance of message we are going to log;
 if you set log level to info for example only error messages upto info will be shown, verbose,debug and silly will be omitted
 
 npm i winston-mongodb // for logging to mongodb
+
+process terminates if we dont catch the exception
+
+// Process managers
+tools inn production to restart our processs
+
+winston.handleExceptions(
+new winston.transports.File({ filename: 'uncaughtExceptions.log' })
+); // winston alternative to process.on(uncaughtException);
+
+process.on('unhandledRejection', (ex) => {
+throw ex;
+}); // this gets caught in winston.handleExceptions(
+
+DEPLOYMENT
+
+1.  Paas eg Heroku, Aws, Google Cloud Platform, Azure
+2.  Docker
+
+npm i helmet
+npm i compression
+
+To set proxy in windows
+// set HTTP_PROXY = http://proxy.server.com:1234
+
+when you deploy heroku will run npm start thats why we need to set start in our package.json script
+
+check node version
+set engines field in package.json with that node version
+"engines": {
+"node": "10.16.3"
+},
