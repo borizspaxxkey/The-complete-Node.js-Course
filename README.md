@@ -499,3 +499,16 @@ set engines field in package.json with that node version
 "engines": {
 "node": "10.16.3"
 },
+
+create git repo
+run heroku create
+git remote -v
+git push heroku master
+heroku logs
+heroku dyno ssh remoting option service
+heroku dashboard --> more --> run console --> bash --> ls
+cat [filename]
+
+heroku config:set vidly_jwtPrivateKey=12345 // to set environment private key
+heroku config:set NODE_ENV=production // to set node environment to PRODUCTION
+heroku config // to see all the environment config we have set
