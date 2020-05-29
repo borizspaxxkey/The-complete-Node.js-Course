@@ -516,3 +516,6 @@ heroku config // to see all the environment config we have set
 one server in heroku is called a dyno
 they have a temp filesystem
 heroku config:set vidly_db: mongodb://spaxxkey:91408916@vidly-e03ur.azure.mongodb.net/test?retryWrites=true
+
+// HEROKU URL
+https://ebukavidly.herokuapp.com/api/genres
